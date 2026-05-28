@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Features from '../components/Features.astro';
+import LiveDemo from '../components/LiveDemo.astro';
+import Pricing from '../components/Pricing.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="ATS Pro — Recluta con IA. Sin leer CVs uno por uno."
+  description="ATS Pro automatiza tu proceso de reclutamiento con GPT-4o. Crea una vacante, comparte el link y deja que la IA analice, rankee y puntúe cada candidato automáticamente."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <HowItWorks />
+    <Features />
+    <LiveDemo />
+    <Pricing />
+    <Testimonials />
+    <CTAFinal />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,1231 @@
+---
+const candidate = {
+  initials: 'CA',
+  name: 'Carlos Andrade Villanueva',
+  phone: '669•••••••',
+  email: 'c.andrade••••@gmail.com',
+  score: 85,
+  recommendation: 'APTO',
+  skills: ['JavaScript', 'TypeScript', 'React.js', 'Node.js', 'Express.js', 'REST APIs', 'Git', 'JWT/Auth', 'Docker', 'PostgreSQL', 'MySQL'],
+  missing: ['MongoDB', 'Deploy en VPS o servicios cloud'],
+  strengths: [
+    'Experiencia en proyectos personales y colaborativos',
+    'Conocimientos sólidos en tecnologías requeridas',
+    'Proactividad y capacidad para resolver problemas',
+  ],
+  improvements: [
+    'Falta de experiencia con MongoDB',
+    'Falta de experiencia en deploy en VPS o servicios cloud',
+  ],
+  summary: 'Carlos Andrade Villanueva es un candidato apto para la posición de Desarrollador Full Stack Jr. en Nocompila. Posee las habilidades técnicas requeridas y experiencia en proyectos personales que demuestran su capacidad para el rol.',
+};
+---
+
+<section id="demo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M4.5 6l1.5 1.5 2.5-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Demo interactivo
+      </span>
+      <h2 class="section-title reveal stagger-1">Míralo en acción</h2>
+      <p class="section-desc reveal stagger-2">
+        Así se ve el flujo real de ATS Pro. Desde crear la vacante hasta el análisis completo de cada candidato.
+      </p>
+    </div>
+
+    <div class="demo-wrapper reveal stagger-2">
+
+      <!-- Step indicator -->
+      <div class="demo-steps">
+        <button class="step-btn active" data-tab="vacante">
+          <span class="step-num">1</span>
+          <span class="step-label">Crear vacante</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" data-tab="link">
+          <span class="step-num">2</span>
+          <span class="step-label">Link público</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" data-tab="candidatos">
+          <span class="step-num">3</span>
+          <span class="step-label">Candidatos analizados</span>
+        </button>
+      </div>
+
+      <!-- Tab panels -->
+      <div class="demo-body">
+
+        <!-- ─── TAB 1: Crear vacante ─── -->
+        <div class="tab-panel active" id="tab-vacante">
+          <div class="tab-header">
+            <div>
+              <div class="breadcrumb">Vacantes › <strong>Nueva vacante</strong></div>
+              <h3 class="tab-title">Nueva vacante</h3>
+              <p class="tab-subtitle">Completa los requisitos para que la IA evalúe correctamente a los candidatos</p>
+            </div>
+            <div class="tab-actions">
+              <button class="action-cancel">Cancelar</button>
+              <button class="action-create btn-primary" id="btnCrearVacante">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+                Crear vacante
+              </button>
+            </div>
+          </div>
+
+          <div class="form-sections">
+            <!-- Información del puesto -->
+            <div class="form-section">
+              <div class="form-section-title">INFORMACIÓN DEL PUESTO</div>
+              <div class="fields-grid-2">
+                <div class="mock-field">
+                  <span class="mock-placeholder">Título del puesto <span class="req">**</span></span>
+                  <span class="mock-value">Desarrollador Full Stack Jr. (Node.js / React)</span>
+                </div>
+                <div class="mock-field mock-select">
+                  <span class="mock-placeholder">Área profesional <span class="req">**</span></span>
+                  <span class="mock-value">Tecnología</span>
+                  <svg class="select-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 5.5l3.5 3.5 3.5-3.5" stroke="#94A3B8" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </div>
+                <div class="mock-field">
+                  <span class="mock-placeholder">Empresa o proyecto <span class="req">**</span></span>
+                  <span class="mock-value">Nocompila</span>
+                </div>
+                <div class="mock-field">
+                  <span class="mock-placeholder">Años de experiencia <span class="req">**</span></span>
+                  <span class="mock-value">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Descripción del rol -->
+            <div class="form-section">
+              <div class="form-section-title">DESCRIPCIÓN DEL ROL</div>
+              <div class="mock-field mock-textarea">
+                <span class="mock-placeholder">Descripción <span class="req">**</span></span>
+                <span class="mock-value textarea-val">Buscamos un Desarrollador Full Stack Jr. con conocimientos en Node.js y React. Trabajarás en proyectos reales con un equipo pequeño y dinámico. Se valora experiencia en APIs REST, bases de datos relacionales y manejo de Git.</span>
+                <span class="textarea-hint">Una descripción detallada mejora la precisión del análisis IA</span>
+              </div>
+            </div>
+
+            <!-- Requisitos -->
+            <div class="form-section">
+              <div class="form-section-title">REQUISITOS</div>
+              <div class="mock-field mock-textarea short">
+                <span class="mock-placeholder">Habilidades y conocimientos requeridos <span class="req">**</span></span>
+                <span class="mock-value">JavaScript, TypeScript, React.js, Node.js, Express.js, REST APIs, Git, JWT/Auth, Docker, PostgreSQL, MySQL, MongoDB, Deploy en VPS o servicios cloud</span>
+                <span class="textarea-hint">Separa cada habilidad con coma. Sé específico para mejores resultados.</span>
+              </div>
+              <div class="fields-grid-2 lang-row">
+                <div class="mock-field mock-select lang-field">
+                  <span class="lang-label">Inglés requerido</span>
+                  <span class="mock-value">Intermedio</span>
+                  <svg class="select-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 5.5l3.5 3.5 3.5-3.5" stroke="#94A3B8" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </div>
+                <div class="mock-field mock-select lang-field">
+                  <span class="lang-label">Español requerido</span>
+                  <span class="mock-value">Nativo</span>
+                  <svg class="select-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 5.5l3.5 3.5 3.5-3.5" stroke="#94A3B8" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="mock-field mock-textarea short">
+                <span class="mock-placeholder">Otros requisitos (opcional)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── TAB 2: Link público + candidatos ─── -->
+        <div class="tab-panel" id="tab-link">
+          <div class="tab-header">
+            <div>
+              <div class="breadcrumb">Vacantes › <strong>Desarrollador Full Stack Jr. (Node.js / React)</strong></div>
+              <div class="vacancy-title-row">
+                <h3 class="tab-title">Desarrollador Full Stack Jr. (Node.js / React)</h3>
+                <span class="badge-abierta">Abierta</span>
+                <span class="badge-area">Tecnología</span>
+              </div>
+              <p class="vacancy-meta">Nocompila · Desde 25 may 2026 · Hasta 29 jun 2026</p>
+            </div>
+          </div>
+
+          <div class="vacancy-toolbar">
+            <div class="toolbar-left">
+              <div class="toggle-notif">
+                <span class="toggle-track on"></span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5a4 4 0 014 4v1.5l1 1.5H2l1-1.5V5.5a4 4 0 014-4z" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 11.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.2"/></svg>
+                <span>Notificaciones</span>
+              </div>
+              <button class="toolbar-btn">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                Editar
+              </button>
+              <button class="toolbar-btn danger">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 4.5l4 4M8.5 4.5l-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                Cerrar
+              </button>
+              <button class="toolbar-btn excel">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.1"/><path d="M4 4.5l1.5 2L7 4.5M4 8.5h5M7 6.5h2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                Excel
+              </button>
+            </div>
+          </div>
+
+          <!-- Link público -->
+          <div class="public-link-box">
+            <div class="public-link-label">LINK PÚBLICO PARA CANDIDATOS</div>
+            <div class="public-link-row">
+              <div class="public-link-url">https://ats.servercontrol-mzt.com/postular/63476703</div>
+              <button class="copy-link-btn" id="copyBtn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 11V3a1 1 0 011-1h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats cards -->
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon blue">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 17c0-3.3 2.7-6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="7" r="3.5" stroke="currentColor" stroke-width="1.4" opacity="0.5"/><path d="M14 11c2.2.7 4 2.7 4 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/></svg>
+              </div>
+              <div class="stat-val">1</div>
+              <div class="stat-lbl">Total candidatos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon emerald">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#10B981" stroke-width="1.4"/><path d="M6.5 10.5l2.5 2.5 5-5" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="stat-val emerald">1</div>
+              <div class="stat-lbl">Aptos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon amber">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#F59E0B" stroke-width="1.4"/><path d="M10 7v4M10 13v.5" stroke="#F59E0B" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="stat-val amber">0</div>
+              <div class="stat-lbl">A revisar</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon red">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#EF4444" stroke-width="1.4"/><path d="M7.5 7.5l5 5M12.5 7.5l-5 5" stroke="#EF4444" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="stat-val red">0</div>
+              <div class="stat-lbl">No aptos</div>
+            </div>
+          </div>
+
+          <!-- Share prompt -->
+          <div class="share-prompt">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#2563EB" stroke-width="1.1"/><path d="M7 4.5v3l1.5 1.5" stroke="#2563EB" stroke-width="1.1" stroke-linecap="round"/></svg>
+            <span>Comparte el link en <strong>WhatsApp, LinkedIn, Instagram</strong> o email para recibir más candidatos. La IA los analiza automáticamente.</span>
+          </div>
+        </div>
+
+        <!-- ─── TAB 3: Candidatos con desglose ─── -->
+        <div class="tab-panel" id="tab-candidatos">
+          <div class="tab-header compact">
+            <div>
+              <div class="breadcrumb">Vacantes › <strong>Desarrollador Full Stack Jr. (Node.js / React)</strong></div>
+              <div class="vacancy-title-row">
+                <h3 class="tab-title">Desarrollador Full Stack Jr. (Node.js / React)</h3>
+                <span class="badge-abierta">Abierta</span>
+                <span class="badge-area">Tecnología</span>
+              </div>
+              <p class="vacancy-meta">Nocompila · Desde 25 may 2026 · Hasta 29 jun 2026</p>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="candidates-toolbar">
+            <div class="filter-select">
+              <span>Recomendación</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="sort-select-wrap">
+              <span class="sort-label">Ordenar por</span>
+              <div class="sort-select">
+                <span>Score (desc)</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="candidates-table">
+            <div class="ct-head">
+              <span class="col-expand"></span>
+              <span class="col-num">#</span>
+              <span class="col-candidato">CANDIDATO</span>
+              <span class="col-tel">TELÉFONO</span>
+              <span class="col-email">EMAIL</span>
+              <span class="col-score">SCORE</span>
+              <span class="col-habs">HABILIDADES</span>
+              <span class="col-ingles">INGLÉS</span>
+              <span class="col-rec">RECOMENDACIÓN</span>
+              <span class="col-cv">CV</span>
+            </div>
+
+            <!-- Row collapsed -->
+            <div class="ct-row" id="candidateRow">
+              <button class="expand-btn" id="expandBtn" aria-label="Expandir">
+                <svg id="expandIcon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <span class="col-num row-num">1</span>
+              <span class="col-candidato row-candidato">
+                <span class="c-avatar" style="background:#1d4ed8">CA</span>
+                <span class="c-name">{candidate.name}</span>
+              </span>
+              <span class="col-tel row-tel">{candidate.phone}</span>
+              <span class="col-email row-email">{candidate.email}</span>
+              <span class="col-score row-score">
+                <span class="score-badge high">{candidate.score}%</span>
+              </span>
+              <span class="col-habs row-habs">
+                {candidate.skills.slice(0, 3).map(s => (
+                  <span class="skill-chip">{s}</span>
+                ))}
+                <span class="skill-more">+{candidate.skills.length - 3}</span>
+              </span>
+              <span class="col-ingles row-ingles">
+                <span class="ingles-text">El candidato tiene</span>
+              </span>
+              <span class="col-rec row-rec">
+                <span class="rec-badge apto">APTO</span>
+              </span>
+              <span class="col-cv row-cv">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M5.5 8L8 10.5 10.5 8" stroke="#2563EB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 13h11" stroke="#2563EB" stroke-width="1.4" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+
+            <!-- Row expanded (detail) -->
+            <div class="ct-detail" id="candidateDetail" style="display:none">
+              <div class="detail-inner">
+                <!-- Resumen ejecutivo -->
+                <div class="detail-summary">
+                  <div class="detail-section-title">RESUMEN EJECUTIVO</div>
+                  <p class="summary-text">{candidate.summary}</p>
+                </div>
+
+                <!-- Fortalezas + Áreas de mejora + Habilidades -->
+                <div class="detail-cols">
+                  <div class="detail-col">
+                    <div class="detail-col-title fortalezas">FORTALEZAS</div>
+                    <ul class="detail-list">
+                      {candidate.strengths.map(s => (
+                        <li class="detail-item ok">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/><path d="M4.5 7l2 2 3.5-3" stroke="#10B981" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="detail-col">
+                    <div class="detail-col-title mejora">ÁREAS DE MEJORA</div>
+                    <ul class="detail-list">
+                      {candidate.improvements.map(s => (
+                        <li class="detail-item bad">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.35)" stroke-width="1"/><path d="M5 5l4 4M9 5l-4 4" stroke="#EF4444" stroke-width="1.3" stroke-linecap="round"/></svg>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="detail-col">
+                    <div class="detail-col-title habilidades">HABILIDADES ENCONTRADAS</div>
+                    <div class="habs-found">
+                      {candidate.skills.map(s => (
+                        <span class="hab-found">{s}</span>
+                      ))}
+                    </div>
+                    <div class="detail-col-title faltantes" style="margin-top:12px">FALTANTES</div>
+                    <div class="habs-found">
+                      {candidate.missing.map(s => (
+                        <span class="hab-missing">{s}</span>
+                      ))}
+                    </div>
+                    <div class="detail-col-title score-ats-title" style="margin-top:12px">SCORE ATS</div>
+                    <div class="score-ats-badge">{candidate.score} / 100</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #demo {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+  }
+
+  .section-desc {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  /* Wrapper */
+  .demo-wrapper {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* Step indicator */
+  .demo-steps {
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    gap: 0;
+  }
+
+  .step-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+
+  .step-btn:hover { background: rgba(255,255,255,0.05); }
+
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(255,255,255,0.07);
+    border: 1.5px solid var(--border);
+    color: var(--text-muted);
+    transition: all 0.25s;
+    flex-shrink: 0;
+  }
+
+  .step-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.25s;
+    white-space: nowrap;
+  }
+
+  .step-btn.active .step-num {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.2);
+  }
+
+  .step-btn.active .step-label { color: var(--text-primary); font-weight: 600; }
+
+  .step-btn.done .step-num {
+    background: var(--emerald);
+    border-color: var(--emerald);
+    color: #fff;
+  }
+
+  .step-btn.done .step-label { color: var(--text-secondary); }
+
+  .step-connector {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin: 0 4px;
+    max-width: 60px;
+  }
+
+  /* Body */
+  .demo-body { min-height: 420px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── SHARED HEADER ── */
+  .tab-header {
+    padding: 24px 28px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .tab-header.compact { padding-bottom: 12px; }
+
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .breadcrumb strong { color: var(--text-secondary); }
+
+  .tab-title {
+    font-family: var(--font-display);
+    font-size: clamp(17px, 2vw, 22px);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+  }
+
+  .tab-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .tab-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .action-cancel {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: none;
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .action-cancel:hover { background: rgba(255,255,255,0.05); }
+
+  .action-create {
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+
+  /* ── TAB 1: FORM ── */
+  .form-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 28px 28px;
+  }
+
+  .form-section {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .fields-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .lang-row { margin-top: 4px; }
+
+  .mock-field {
+    position: relative;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color 0.2s;
+  }
+
+  .mock-field:hover { border-color: rgba(255,255,255,0.15); }
+
+  .mock-select {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mock-placeholder {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .req { color: var(--blue-light); font-size: 10px; }
+
+  .mock-value {
+    font-size: 13px;
+    color: var(--text-primary);
+    flex: 1;
+  }
+
+  .select-chevron { flex-shrink: 0; margin-left: auto; }
+
+  .mock-textarea {
+    flex-direction: column;
+  }
+
+  .mock-textarea .mock-value {
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .mock-textarea.short { min-height: 70px; }
+
+  .textarea-val { display: block; margin-top: 2px; }
+
+  .textarea-hint {
+    font-size: 11px;
+    color: var(--blue-light);
+    margin-top: 6px;
+    opacity: 0.8;
+  }
+
+  .lang-field { position: relative; }
+  .lang-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    background: var(--bg);
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+
+  .lang-field .mock-value {
+    margin-top: 6px;
+  }
+
+  /* ── TAB 2: LINK ── */
+  .vacancy-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .badge-abierta {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--emerald);
+    background: var(--emerald-glow);
+    border: 1px solid rgba(16,185,129,0.3);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .badge-area {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .vacancy-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .vacancy-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.01);
+  }
+
+  .toolbar-left { display: flex; align-items: center; gap: 8px; }
+
+  .toggle-notif {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+  }
+
+  .toggle-track {
+    width: 28px; height: 16px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--border);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .toggle-track.on { background: var(--blue); border-color: var(--blue); }
+  .toggle-track.on::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 14px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .toolbar-btn:hover { background: rgba(255,255,255,0.08); }
+  .toolbar-btn.danger { color: #EF4444; }
+  .toolbar-btn.danger:hover { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); }
+  .toolbar-btn.excel { color: var(--blue-light); }
+  .toolbar-btn.excel:hover { background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.25); }
+
+  /* Link box */
+  .public-link-box {
+    margin: 20px 28px 0;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .public-link-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .public-link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .public-link-url {
+    flex: 1;
+    font-size: 13px;
+    font-family: monospace;
+    color: var(--text-secondary);
+    word-break: break-all;
+  }
+
+  .copy-link-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .copy-link-btn:hover { color: var(--blue-light); }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 16px 28px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .stat-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-icon.blue    { background: rgba(37,99,235,0.12);  color: var(--blue-light); }
+  .stat-icon.emerald { background: var(--emerald-glow);    color: var(--emerald); }
+  .stat-icon.amber   { background: rgba(245,158,11,0.12);  color: var(--amber); }
+  .stat-icon.red     { background: rgba(239,68,68,0.12);   color: var(--red); }
+
+  .stat-val {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .stat-val.emerald { color: var(--emerald); }
+  .stat-val.amber   { color: var(--amber); }
+  .stat-val.red     { color: var(--red); }
+
+  .stat-lbl {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* Share prompt */
+  .share-prompt {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 28px 24px;
+    padding: 12px 16px;
+    background: rgba(37,99,235,0.06);
+    border: 1px solid rgba(37,99,235,0.2);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .share-prompt svg { flex-shrink: 0; margin-top: 1px; }
+  .share-prompt strong { color: var(--text-primary); }
+
+  /* ── TAB 3: CANDIDATES ── */
+  .candidates-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .filter-select, .sort-select {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .sort-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sort-label {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* Table */
+  .candidates-table {
+    overflow-x: auto;
+  }
+
+  .ct-head {
+    display: grid;
+    grid-template-columns: 32px 40px 1fr 100px 160px 70px 160px 80px 110px 36px;
+    gap: 6px;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    min-width: 860px;
+  }
+
+  .ct-row {
+    display: grid;
+    grid-template-columns: 32px 40px 1fr 100px 160px 70px 160px 80px 110px 36px;
+    gap: 6px;
+    padding: 12px 20px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+    cursor: pointer;
+    min-width: 860px;
+  }
+
+  .ct-row:hover { background: rgba(255,255,255,0.03); }
+
+  .expand-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+    transition: color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .expand-btn.open { color: var(--blue-light); }
+  .expand-btn.open svg { transform: rotate(90deg); }
+
+  .row-num {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .row-candidato {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .c-avatar {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    flex-shrink: 0;
+  }
+
+  .c-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .row-tel, .row-email {
+    font-size: 12px;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .score-badge {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 7px;
+    display: inline-flex;
+  }
+
+  .score-badge.high { background: rgba(16,185,129,0.15); color: var(--emerald); }
+  .score-badge.mid  { background: rgba(245,158,11,0.15);  color: var(--amber); }
+  .score-badge.low  { background: rgba(239,68,68,0.15);   color: var(--red); }
+
+  .row-habs { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+
+  .skill-chip {
+    font-size: 10px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .skill-more {
+    font-size: 10px;
+    color: var(--blue-light);
+    font-weight: 600;
+  }
+
+  .ingles-text {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .rec-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .rec-badge.apto {
+    background: var(--emerald);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.3);
+  }
+
+  .row-cv {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* Detail panel */
+  .ct-detail {
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    animation: slideDown 0.25s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .detail-inner {
+    padding: 20px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .detail-summary {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .detail-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .summary-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .detail-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .detail-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-col-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .detail-col-title.fortalezas  { color: var(--emerald); }
+  .detail-col-title.mejora      { color: var(--red); }
+  .detail-col-title.habilidades { color: var(--blue-light); }
+  .detail-col-title.faltantes   { color: var(--red); }
+  .detail-col-title.score-ats-title { color: var(--text-muted); }
+
+  .detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .detail-item.ok  { color: var(--text-secondary); }
+  .detail-item.bad { color: var(--text-secondary); }
+  .detail-item svg { flex-shrink: 0; margin-top: 1px; }
+
+  .habs-found {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .hab-found {
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .hab-missing {
+    font-size: 11px;
+    color: var(--red);
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.25);
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .score-ats-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--emerald);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .demo-steps { gap: 0; padding: 16px 20px; }
+    .step-label { display: none; }
+    .step-connector { max-width: 32px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .detail-cols { grid-template-columns: 1fr; }
+    .ct-head, .ct-row { min-width: 700px; }
+  }
+
+  @media (max-width: 640px) {
+    #demo { padding: 80px 0; }
+    .tab-header { padding: 16px 16px 12px; }
+    .form-sections { padding: 16px; }
+    .fields-grid-2 { grid-template-columns: 1fr; }
+    .public-link-box { margin: 16px 16px 0; }
+    .stats-row { padding: 12px 16px; }
+    .share-prompt { margin: 0 16px 16px; }
+    .candidates-toolbar { padding: 12px 16px; }
+    .detail-inner { padding: 16px; }
+  }
+</style>
+
+<script>
+  // Step navigation
+  const stepBtns = document.querySelectorAll<HTMLButtonElement>('.step-btn');
+  const panels   = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  function goToTab(target: string) {
+    const idx = ['vacante','link','candidatos'].indexOf(target);
+    stepBtns.forEach((btn, i) => {
+      btn.classList.remove('active', 'done');
+      if (i < idx)       btn.classList.add('done');
+      else if (i === idx) btn.classList.add('active');
+    });
+    panels.forEach(p => p.classList.remove('active'));
+    document.getElementById(`tab-${target}`)?.classList.add('active');
+  }
+
+  stepBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      if (target) goToTab(target);
+    });
+  });
+
+  // "Crear vacante" button advances to tab 2
+  document.getElementById('btnCrearVacante')?.addEventListener('click', () => goToTab('link'));
+
+  // Copy link button
+  const copyBtn = document.getElementById('copyBtn');
+  copyBtn?.addEventListener('click', () => {
+    navigator.clipboard?.writeText('https://ats.servercontrol-mzt.com/postular/63476703').catch(() => {});
+    copyBtn.style.color = 'var(--emerald)';
+    setTimeout(() => { copyBtn.style.color = ''; }, 2000);
+  });
+
+  // Expand/collapse candidate detail
+  const expandBtn    = document.getElementById('expandBtn');
+  const candidateRow = document.getElementById('candidateRow');
+  const detail       = document.getElementById('candidateDetail');
+
+  function toggleDetail() {
+    const isOpen = detail?.style.display !== 'none';
+    if (detail) detail.style.display = isOpen ? 'none' : 'block';
+    expandBtn?.classList.toggle('open', !isOpen);
+  }
+
+  expandBtn?.addEventListener('click', (e) => { e.stopPropagation(); toggleDetail(); });
+  candidateRow?.addEventListener('click', toggleDetail);
+</script>

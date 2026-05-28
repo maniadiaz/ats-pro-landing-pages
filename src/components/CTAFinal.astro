@@ -1,0 +1,621 @@
+---
+const CONTACT_EMAIL = 'servercontrolmzt@gmail.com';
+---
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" is:inline></script>
+
+<section id="cta">
+  <div class="cta-bg">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="cta-grid"></div>
+  </div>
+
+  <div class="container">
+    <div class="cta-inner reveal">
+      <!-- Badge -->
+      <div class="cta-badge">
+        <span class="badge-dot"></span>
+        Más de 240 empresas ya contratan con IA
+      </div>
+
+      <!-- Headline -->
+      <h2 class="cta-headline">
+        Empieza a reclutar<br />
+        <span class="cta-gradient">con IA hoy</span>
+      </h2>
+
+      <!-- Subheadline -->
+      <p class="cta-sub">
+        Sin tarjeta de crédito. Configura tu primera vacante<br class="break-md" />
+        en menos de 5 minutos.
+      </p>
+
+      <!-- Contact form -->
+      <form class="cta-form" id="ctaForm" novalidate>
+        <div class="fields-grid">
+          <!-- Nombre -->
+          <div class="field-group">
+            <label class="field-label" for="inputNombre">Nombre</label>
+            <div class="field-wrap">
+              <svg class="field-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <input
+                type="text"
+                id="inputNombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                class="field-input"
+                autocomplete="name"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field-group">
+            <label class="field-label" for="inputEmail">Email</label>
+            <div class="field-wrap">
+              <svg class="field-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2" y="4" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M2 6l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <input
+                type="email"
+                id="inputEmail"
+                name="email"
+                placeholder="tu@empresa.com"
+                class="field-input"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Empresa (opcional) -->
+          <div class="field-group">
+            <label class="field-label" for="inputEmpresa">
+              Empresa <span class="optional">(opcional)</span>
+            </label>
+            <div class="field-wrap">
+              <svg class="field-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2" y="5" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M5 5V4a3 3 0 016 0v1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M6 9h4M6 12h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <input
+                type="text"
+                id="inputEmpresa"
+                name="empresa"
+                placeholder="Nombre de tu empresa"
+                class="field-input"
+                autocomplete="organization"
+              />
+            </div>
+          </div>
+
+          <!-- Mensaje (opcional) -->
+          <div class="field-group field-full">
+            <label class="field-label" for="inputMensaje">
+              Mensaje <span class="optional">(opcional)</span>
+            </label>
+            <div class="field-wrap field-wrap-textarea">
+              <svg class="field-icon field-icon-top" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M5 6h6M5 9h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <textarea
+                id="inputMensaje"
+                name="mensaje"
+                placeholder="¿Cuántos candidatos manejas al mes? ¿En qué puestos recruitás más?"
+                class="field-input field-textarea"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-primary cta-submit" id="ctaSubmitBtn">
+          <span id="submitLabel">Solicitar acceso gratis</span>
+          <svg id="submitArrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9H14.25M14.25 9L10.5 5.25M14.25 9L10.5 12.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg id="submitSpinner" class="spinner" width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:none">
+            <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+            <path d="M9 2a7 7 0 017 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- Form note -->
+        <p class="form-note">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M5 6.5l1.5 1.5 2.5-2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Sin tarjeta de crédito. Cancela cuando quieras.
+        </p>
+
+        <!-- Feedback messages -->
+        <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+
+        <!-- Direct contact fallback -->
+        <p class="direct-contact">
+          O escríbenos directamente a
+          <a href={`mailto:${CONTACT_EMAIL}`} class="contact-link">{CONTACT_EMAIL}</a>
+        </p>
+      </form>
+
+      <!-- Success state -->
+      <div class="cta-success" id="ctaSuccess" style="display:none">
+        <div class="success-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="16" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M11 18.5l5 5 9-10" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="success-text">
+          <span class="success-title">¡Listo! Te contactamos pronto 🎉</span>
+          <span class="success-desc">
+            Recibimos tu solicitud. Te escribiremos a tu email en menos de 24 horas.
+          </span>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="success-email">{CONTACT_EMAIL}</a>
+        </div>
+      </div>
+
+      <!-- Trust signals -->
+      <div class="cta-trust">
+        <div class="trust-row">
+          <div class="trust-signal">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M7.5 1.5a5 5 0 100 10A5 5 0 007.5 1.5z" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="1.1"/>
+              <path d="M5.5 7.5l1.5 1.5 3-3" stroke="#2563EB" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Datos cifrados con TLS</span>
+          </div>
+          <div class="trust-signal">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect x="2" y="5" width="11" height="8" rx="2" stroke="#10B981" stroke-width="1.1"/>
+              <path d="M5 5V4a2.5 2.5 0 015 0v1" stroke="#10B981" stroke-width="1.1"/>
+            </svg>
+            <span>Sin acceso a tus datos</span>
+          </div>
+          <div class="trust-signal">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <circle cx="7.5" cy="7.5" r="5.5" stroke="#F59E0B" stroke-width="1.1"/>
+              <path d="M7.5 5v3l1.5 1.5" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <span>Soporte en horario México</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #cta {
+    position: relative;
+    padding: 120px 0;
+    background: #06060D;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+
+  .cta-orb-1 {
+    width: 500px; height: 500px;
+    background: rgba(37,99,235,0.2);
+    top: -100px; left: -100px;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+
+  .cta-orb-2 {
+    width: 400px; height: 400px;
+    background: rgba(16,185,129,0.12);
+    bottom: -80px; right: -80px;
+    animation: drift 18s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(30px, 20px); }
+  }
+
+  .cta-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 80%);
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-inner {
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Badge */
+  .cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: 100px;
+  }
+
+  .badge-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
+    50%       { box-shadow: 0 0 0 6px rgba(16,185,129,0.05); }
+  }
+
+  /* Headline */
+  .cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text-primary);
+  }
+
+  .cta-gradient {
+    background: linear-gradient(135deg, var(--blue-light) 0%, var(--emerald-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-sub {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .break-md { display: none; }
+  @media (min-width: 640px) { .break-md { display: block; } }
+
+  /* Form */
+  .cta-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .field-full {
+    grid-column: 1 / -1;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+  }
+
+  .field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.03em;
+  }
+
+  .optional {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .field-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: border-color 0.2s;
+  }
+
+  .field-wrap:focus-within {
+    border-color: rgba(37,99,235,0.5);
+    background: rgba(37,99,235,0.05);
+  }
+
+  .field-wrap-textarea {
+    align-items: flex-start;
+    padding: 12px 14px;
+  }
+
+  .field-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .field-icon-top {
+    margin-top: 2px;
+  }
+
+  .field-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    caret-color: var(--blue-light);
+    padding: 13px 0;
+    width: 100%;
+  }
+
+  .field-input::placeholder { color: var(--text-muted); }
+
+  .field-textarea {
+    resize: none;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  /* Submit button */
+  .cta-submit {
+    width: 100%;
+    max-width: 340px;
+    justify-content: center;
+    font-size: 16px;
+    padding: 15px 28px;
+    gap: 10px;
+  }
+
+  .cta-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .spinner {
+    animation: spin 0.8s linear infinite;
+  }
+
+  /* Form feedback */
+  .form-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .form-feedback {
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 480px;
+    width: 100%;
+    transition: all 0.3s;
+  }
+
+  .form-feedback.error {
+    color: var(--red);
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.25);
+    padding: 12px 16px;
+  }
+
+  .direct-contact {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .contact-link {
+    color: var(--blue-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--emerald-light);
+    text-decoration: underline;
+  }
+
+  /* Success */
+  .cta-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: rgba(16,185,129,0.07);
+    border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 520px;
+    width: 100%;
+    text-align: left;
+    animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-icon { flex-shrink: 0; }
+
+  .success-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .success-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+  }
+
+  .success-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .success-email {
+    font-size: 13px;
+    color: var(--emerald);
+    text-decoration: none;
+    margin-top: 2px;
+  }
+
+  .success-email:hover { text-decoration: underline; }
+
+  /* Trust */
+  .cta-trust { padding-top: 4px; }
+
+  .trust-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .trust-signal {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 600px) {
+    #cta { padding: 80px 0; }
+    .fields-grid { grid-template-columns: 1fr; }
+    .trust-row { gap: 14px; }
+    .cta-success { flex-direction: column; }
+  }
+</style>
+
+<script>
+  const EMAILJS_PUBLIC_KEY = ''; // reemplaza con tu Public Key de EmailJS → Dashboard > Account > Public Key
+  const EMAILJS_SERVICE_ID  = '';
+  const EMAILJS_TEMPLATE_ID = '';
+
+  // @ts-ignore
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  const form        = document.getElementById('ctaForm')      as HTMLFormElement;
+  const submitBtn   = document.getElementById('ctaSubmitBtn') as HTMLButtonElement;
+  const submitLabel = document.getElementById('submitLabel')  as HTMLElement;
+  const submitArrow = document.getElementById('submitArrow')  as HTMLElement;
+  const submitSpinner = document.getElementById('submitSpinner') as HTMLElement;
+  const feedback    = document.getElementById('formFeedback') as HTMLElement;
+  const successBox  = document.getElementById('ctaSuccess')   as HTMLElement;
+
+  function setLoading(on: boolean) {
+    submitBtn.disabled = on;
+    submitLabel.textContent = on ? 'Enviando...' : 'Solicitar acceso gratis';
+    submitArrow.style.display  = on ? 'none' : 'block';
+    submitSpinner.style.display = on ? 'block' : 'none';
+  }
+
+  function showError(msg: string) {
+    feedback.className = 'form-feedback error';
+    feedback.textContent = msg;
+  }
+
+  function clearError() {
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearError();
+
+    const nombre  = (document.getElementById('inputNombre')  as HTMLInputElement).value.trim();
+    const email   = (document.getElementById('inputEmail')   as HTMLInputElement).value.trim();
+    const empresa = (document.getElementById('inputEmpresa') as HTMLInputElement).value.trim();
+    const mensaje = (document.getElementById('inputMensaje') as HTMLTextAreaElement).value.trim();
+
+    if (!nombre) {
+      showError('Por favor ingresa tu nombre.');
+      (document.getElementById('inputNombre') as HTMLInputElement).focus();
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      showError('Por favor ingresa un email válido.');
+      (document.getElementById('inputEmail') as HTMLInputElement).focus();
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // @ts-ignore
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:  nombre,
+        from_email: email,
+        subject:    empresa ? `Solicitud de acceso — ${empresa}` : 'Solicitud de acceso ATS Pro',
+        message:    mensaje || '—',
+      });
+
+      form.style.display = 'none';
+      successBox.style.display = 'flex';
+    } catch (_err) {
+      showError('Algo salió mal, escríbenos directo a servercontrolmzt@gmail.com');
+      setLoading(false);
+    }
+  });
+</script>
